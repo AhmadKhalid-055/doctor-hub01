@@ -19,7 +19,9 @@ const EMPTY_ITEM: PrescriptionItem = {
   medicineName: "", dosage: "", frequency: "", duration: "", instructions: "",
 };
 
-export default function NewPrescriptionPage() {
+import { Suspense } from "react";
+
+function PrescriptionForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { toast } = useToast();
@@ -160,5 +162,13 @@ export default function NewPrescriptionPage() {
         </Button>
       </form>
     </div>
+  );
+}
+
+export default function NewPrescriptionPage() {
+  return (
+    <Suspense fallback={<div className="text-white text-center p-8">Loading...</div>}>
+      <PrescriptionForm />
+    </Suspense>
   );
 }

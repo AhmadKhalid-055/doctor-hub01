@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PaymentVerificationSchema } from "@/lib/validators";
+import { paymentVerificationSchema } from "@/lib/validators";
 import { PaymentService } from "@/services/payment.service";
 import { verifyAccessToken } from "@/lib/jwt";
 
@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const result = PaymentVerificationSchema.safeParse(body);
+    const result = paymentVerificationSchema.safeParse(body);
 
     if (!result.success) {
       return NextResponse.json(
