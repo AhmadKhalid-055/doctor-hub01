@@ -1,5 +1,7 @@
 # Doctor Hub
 
+🟢 **Live Project Link:** [https://doctor-hub01.vercel.app/](https://doctor-hub01.vercel.app/)
+
 A full-stack medical platform built with **Next.js 15**, **PostgreSQL (Supabase)**, **Prisma ORM**, **Tailwind CSS**, and **ShadCN UI**.
 
 ## Features
