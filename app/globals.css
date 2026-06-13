@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+/* ────────────────────────────────────────────
+   Design System Tokens
+──────────────────────────────────────────── */
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-outfit);
+
+  /* Primary Palette — Deep Royal Teal */
+  --color-primary-50:  hsl(185, 78%, 95%);
+  --color-primary-100: hsl(185, 78%, 85%);
+  --color-primary-200: hsl(185, 78%, 70%);
+  --color-primary-300: hsl(185, 78%, 55%);
+  --color-primary-400: hsl(185, 78%, 42%);
+  --color-primary-500: hsl(185, 78%, 30%);
+  --color-primary-600: hsl(185, 78%, 25%);
+  --color-primary-700: hsl(185, 78%, 20%);
+  --color-primary-800: hsl(185, 78%, 14%);
+  --color-primary-900: hsl(185, 78%, 8%);
+
+  /* Accent Palette — Emerald Mint */
+  --color-accent-400: hsl(152, 60%, 60%);
+  --color-accent-500: hsl(152, 60%, 48%);
+  --color-accent-600: hsl(152, 60%, 36%);
+
+  /* Surface Palette */
+  --color-surface-50:  hsl(220, 40%, 98%);
+  --color-surface-900: hsl(220, 40%, 8%);
+  --color-surface-950: hsl(220, 40%, 5%);
+}
+
+/* ────────────────────────────────────────────
+   Base Reset & Typography
+──────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: hsl(220, 40%, 5%);
+  color: hsl(210, 40%, 96%);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-outfit), var(--font-inter), system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* ────────────────────────────────────────────
+   Glassmorphism Utilities
+──────────────────────────────────────────── */
+.glass {
+  background: hsla(220, 40%, 14%, 0.6);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+}
+
+.glass-card {
+  background: hsla(220, 40%, 10%, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid hsla(0, 0%, 100%, 0.06);
+  border-radius: 1rem;
+}
+
+/* ────────────────────────────────────────────
+   Gradient Utilities
+──────────────────────────────────────────── */
+.gradient-teal {
+  background: linear-gradient(135deg, hsl(185, 78%, 25%) 0%, hsl(152, 60%, 36%) 100%);
+}
+
+.gradient-surface {
+  background: linear-gradient(180deg, hsl(220, 40%, 8%) 0%, hsl(220, 40%, 5%) 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, hsl(185, 78%, 70%) 50%, hsl(152, 60%, 60%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ────────────────────────────────────────────
+   Micro-animations
+──────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 0%, hsla(0,0%,100%,0.06) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ────────────────────────────────────────────
+   Custom Scrollbar
+──────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(220, 40%, 8%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(220, 20%, 25%);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(185, 78%, 30%);
+}
+
+/* ────────────────────────────────────────────
+   Form Inputs
+──────────────────────────────────────────── */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="time"],
+textarea,
+select {
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: hsl(185, 78%, 40%) !important;
+  box-shadow: 0 0 0 3px hsla(185, 78%, 40%, 0.15);
+}
+
+/* ────────────────────────────────────────────
+   Button Transitions
+──────────────────────────────────────────── */
+button {
+  transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* ────────────────────────────────────────────
+   Status Badge Colors
+──────────────────────────────────────────── */
+.badge-pending    { @apply bg-yellow-900/40 text-yellow-400 border border-yellow-800/40; }
+.badge-scheduled  { @apply bg-blue-900/40   text-blue-400   border border-blue-800/40; }
+.badge-completed  { @apply bg-emerald-900/40 text-emerald-400 border border-emerald-800/40; }
+.badge-cancelled  { @apply bg-red-900/40    text-red-400    border border-red-800/40; }
+.badge-no-show    { @apply bg-slate-800     text-slate-400  border border-slate-700; }
