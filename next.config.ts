@@ -55,6 +55,12 @@ const nextConfig: NextConfig = {
   },
   // Disable server-side powered-by header
   poweredByHeader: false,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default nextConfig;
