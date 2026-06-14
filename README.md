@@ -4,6 +4,24 @@
 
 A full-stack medical platform built with **Next.js 15**, **PostgreSQL (Supabase)**, **Prisma ORM**, **Tailwind CSS**, and **ShadCN UI**.
 
+## 🔑 Test Credentials (Live Demo)
+
+Use these pre-seeded accounts to explore every role on the live deployment.  
+**Login page:** [https://doctor-hub01.vercel.app/login](https://doctor-hub01.vercel.app/login)
+
+| Role | Email | Password | Dashboard |
+|------|-------|----------|-----------|
+| 🧑‍⚕️ Patient | `ahmad.khalid.regno.055@gmail.com` | `DataBas1250` | `/dashboard/patient` |
+| 👨‍⚕️ Doctor | `doctor_test@example.com` | `DataBas1250` | `/dashboard/doctor` |
+| 🗂️ Assistant | `assistant_test@example.com` | `DataBas1250` | `/dashboard/assistant` |
+| 🛠️ Admin | `admin_test@example.com` | `DataBas1250` | `/dashboard/admin` |
+| 👑 Super Admin | `super_admin_test@example.com` | `DataBas1250` | `/dashboard/super-admin` |
+
+> **Creating new accounts:**
+> - **Patient** → Self-register at [`/register`](https://doctor-hub01.vercel.app/register)
+> - **Doctor / Assistant** → Log in as Admin and use the **Doctor Management** or **Staff Management** tab in the Admin dashboard
+
+
 ## Features
 
 - 🔐 **Authentication** — JWT, bcrypt, refresh tokens, HttpOnly cookies
